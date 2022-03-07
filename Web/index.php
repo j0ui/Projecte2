@@ -44,8 +44,6 @@ if (isset($_POST['login'])) {
       <input class="controls" type="text" name="DNI" value="" placeholder="&#128231; DNI" required>
       <input class="controls" type="password" name="Contrassenya" value="" placeholder="&#128274; Contrasenya" required>
       <input class="buttons" type="submit" name="login" value="Ingresar">
-      Has oblidat la contrasenya?
-      <div class="checkboxvai"><a onclick="abrirform()">Recuperar contrasennya</a></div>
     </section>
   </form>
   <script>

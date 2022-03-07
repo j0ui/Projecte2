@@ -37,7 +37,7 @@ if(isset($_POST['logout'])){
    <div class="wrapper">
      <ul>
        <li><a href="inici.php">Inici</a></li>
-       <li><a href="header.php">Activitats</a></li>
+       <li><a href="activitats.php">Activitats</a></li>
        <li><a href="error404.html">Sales</a></li>
        <li><a href="error404.html">Curses</a></li>
        <li><a href="cuenta.php">El Meu Perfil</a></li>
@@ -52,7 +52,7 @@ if(isset($_POST['logout'])){
  			<div class="untitled__slideContent">
  				<span>Les</span>
  				<span>Activitats</span>
- 				<a class="button" href="header.php" target="/black">Reservar Activitats</a>
+ 				<a class="button" href="activitats.php" target="/black">Reservar Activitats</a>
  			</div>
  		</div>
  		<div class="untitled__slide">
