@@ -377,16 +377,7 @@ public class Client {
                     + "(ID_ALTA, ID_BAIXA, ID_h, DNI_c) "
                     + "values "
                     + "(?, ?, ?, ?);");
-            PreparedStatement sql5 = con.prepareStatement("insert into reserves "
-                    + "(DNI, Num_Reserves, ID_Activitat, h_inici, h_fi, Dat_fisica) "
-                    + "values "
-                    + "(?, ?, ?, ?, ?, ?);");
-            sql5.setString(1, this.DNI.getDNI());
-            sql5.setInt(2, 0);
-            sql5.setInt(3, act);
-            sql5.setDate(4, null);
-            sql5.setDate(5, null);
-            sql5.setDate(6, null);
+            
             LocalDate date = LocalDate.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             sql2.setDate(1, java.sql.Date.valueOf(date.format(formatter)));
@@ -396,11 +387,10 @@ public class Client {
             int res = sql.executeUpdate();
             int res2 = sql2.executeUpdate();
             int res3 = sql3.executeUpdate();
-            int res4 = sql5.executeUpdate();
             Statement stmt2 = con.createStatement();
             stmt2.execute("SET FOREIGN_KEY_CHECKS=1");
             stmt2.close(); 
-            if(res==1 && res2==1 && res3==1 && res4==1){
+            if(res==1 && res2==1 && res3==1){
                     File fitxer = new File(carpeta2);
                     if (!fitxer.exists()) {
                         fitxer.createNewFile();
