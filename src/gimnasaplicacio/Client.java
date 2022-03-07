@@ -17,6 +17,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Scanner;
 /**
  *
@@ -180,7 +181,7 @@ public class Client {
     
     
     
-    public void Gestio_client() throws SQLException, ParseException, IOException{
+    public void Gestio_clients() throws SQLException, ParseException, IOException{
         do{
             System.out.println("**********MENU GIMNAS*********");
         
@@ -354,15 +355,15 @@ public class Client {
             sql.setString(5, this.domicili);
             sql.setString(6, this.Telefon.getTelefon());
             sql.setString(7, this.CCC.getCCC());
-            sql.setString(8, e.MD5(this.contrassenya));
+            sql.setString(8, Base64.getEncoder().encodeToString(this.contrassenya.getBytes()));
             sql.setDate(9, java.sql.Date.valueOf(this.fecha.getFecha()));
             if(DNI.equals("NIE")){
                 System.out.println("-----------------------------------");
-                System.out.println("S'ha creat el client amb Nom: " + this.nom + " \nCognom: " + this.cognom + " \nNIE: " + this.NIE.getNIE() + " \nCorreu Electrònic: " + this.email.getEmail() + " \nDomicili: " + this.domicili + " \nTelefon: " + this.Telefon.getTelefon() + " \nCompte Bancari:" + this.CCC.getCCC() + " \nContrassenya: " + e.MD5(this.contrassenya)+ " \nData de Naixement: " + this.fecha.getFecha()+ " \nEdat: " + datObj.calcularEdad(fecha) + " anys");   
+                System.out.println("S'ha creat el client amb Nom: " + this.nom + " \nCognom: " + this.cognom + " \nNIE: " + this.NIE.getNIE() + " \nCorreu Electrònic: " + this.email.getEmail() + " \nDomicili: " + this.domicili + " \nTelefon: " + this.Telefon.getTelefon() + " \nCompte Bancari:" + this.CCC.getCCC() + " \nContrassenya: " + this.contrassenya+ " \nData de Naixement: " + this.fecha.getFecha()+ " \nEdat: " + datObj.calcularEdad(fecha) + " anys");   
                 System.out.println("-----------------------------------");
             }else{
                 System.out.println("-----------------------------------");
-                System.out.println("S'ha creat el client amb Nom: " + this.nom + " Cognom: " + this.cognom + " \nDNI: " + this.DNI.getDNI() + " \nCorreu Electrònic: " + this.email.getEmail() + " \nDomicili: " + this.domicili + " \nTelefon: " + this.Telefon.getTelefon() + " \nCompte Bancari:" + this.CCC.getCCC() + " \nContrassenya: " + e.MD5(this.contrassenya)+ " \nData de Naixement: " + this.fecha.getFecha()+ " \nEdat: " + datObj.calcularEdad(fecha) + " anys");
+                System.out.println("S'ha creat el client amb Nom: " + this.nom + " Cognom: " + this.cognom + " \nDNI: " + this.DNI.getDNI() + " \nCorreu Electrònic: " + this.email.getEmail() + " \nDomicili: " + this.domicili + " \nTelefon: " + this.Telefon.getTelefon() + " \nCompte Bancari:" + this.CCC.getCCC() + " \nContrassenya: " + this.contrassenya+ " \nData de Naixement: " + this.fecha.getFecha()+ " \nEdat: " + datObj.calcularEdad(fecha) + " anys");
                 System.out.println("-----------------------------------");
             }
             i++;
@@ -841,7 +842,7 @@ public class Client {
             sql.setString(5, this.domicili);
             sql.setString(6, this.Telefon.getTelefon());
             sql.setString(7, this.CCC.getCCC());
-            sql.setString(8, e.MD5(this.contrassenya));
+            sql.setString(8, Base64.getEncoder().encodeToString(this.contrassenya.getBytes()));
             sql.setString(9, this.fecha.getFecha());
             System.out.println("------------------------------------");
             System.out.println("Modificació: " + this.nom + " \nCognom: " + this.cognom + " \nDNI: " + dni2 + " \nCorreu Electrònic: " + this.email.getEmail() + " \nDomicili: " + this.domicili + " \nTelefon: " + this.Telefon.getTelefon() + " \nCompte Bancari:" + this.CCC.getCCC() + " \nContrassenya: " + this.contrassenya+ " \nData de Naixement:" + this.fecha.getFecha());
@@ -1047,7 +1048,7 @@ public class Client {
             sql.setString(5, this.domicili);
             sql.setString(6, this.Telefon.getTelefon());
             sql.setString(7, this.CCC.getCCC());
-            sql.setString(8, e.MD5(this.contrassenya));
+            sql.setString(8, Base64.getEncoder().encodeToString(this.contrassenya.getBytes()));
             sql.setString(9, this.fecha.getFecha());
             System.out.println("------------------------------------");
             System.out.println("Modificació: " + nom2 + " \nCognom: " + this.cognom + " \nDNI: " + this.DNI.getDNI() + " \nCorreu Electrònic: " + this.email.getEmail() + " \nDomicili: " + this.domicili + " \nTelefon: " + this.Telefon.getTelefon() + " \nCompte Bancari:" + this.CCC.getCCC() + " \nContrassenya: " + this.contrassenya+ " \nData de Naixement:" + this.fecha.getFecha());
@@ -1296,4 +1297,5 @@ public class Client {
     
     
      
+
 }
