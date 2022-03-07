@@ -187,13 +187,13 @@ if($exists2==null && (isset($_POST['bier-button2']) || isset($_POST['bier-button
 }
 
 
-$count6 = $con -> query ("SELECT res.* FROM reserves res, activitat_individual i, activitat a WHERE i.ID_Activitat=a.ID_Activitat AND res.ID_Activitat=a.ID_Activitat AND res.DNI = '$DNI_2' AND res.h_inici=a.h_inici");
+$count6 = $con -> query ("SELECT res.* FROM reserves res, activitat_individual i, activitat a WHERE i.ID_Activitat=a.ID_Activitat AND res.ID_Activitat=a.ID_Activitat AND res.DNI = '$DNI_2' AND res.h_inici=a.h_inici AND (NOW() + INTERVAL 1 HOUR)<res.h_inici AND (NOW() + INTERVAL 24 HOUR)>res.h_inici");
 $exists6 = (mysqli_num_rows($count6))?TRUE:FALSE;
 if($exists6!=null && (isset($_POST['bier-button2']) || isset($_POST['bier-button']) || isset($_POST['bier-button3']) || isset($_POST['bier-button4']) || isset($_POST['bier-button7']))){
   $be = 9;
 }
 
-$count8 = $con -> query ("SELECT res.* FROM reserves res, activitat_colectiva c, activitat a WHERE c.ID_Activitat=a.ID_Activitat AND res.ID_Activitat=a.ID_Activitat AND res.DNI = '$DNI_2' AND res.h_inici=a.h_inici");
+$count8 = $con -> query ("SELECT res.* FROM reserves res, activitat_colectiva c, activitat a WHERE c.ID_Activitat=a.ID_Activitat AND res.ID_Activitat=a.ID_Activitat AND res.DNI = '$DNI_2' AND res.h_inici=a.h_inici AND (NOW() + INTERVAL 1 HOUR)<res.h_inici AND (NOW() + INTERVAL 24 HOUR)>res.h_inici");
 $exists8 = (mysqli_num_rows($count8))?TRUE:FALSE;
 if($exists8!=null && (isset($_POST['bier-button5']) || isset($_POST['bier-button6']) || isset($_POST['bier-button9']) || isset($_POST['bier-button8']) || isset($_POST['bier-button10']) || isset($_POST['bier-button11']) || isset($_POST['bier-button12']))){
   $be = 8;
