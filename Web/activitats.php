@@ -34,7 +34,7 @@ if(isset($_POST['logout'])){
   <div class="wrapper">
     <ul>
       <li><a href="inici.php">Inici</a></li>
-      <li><a href="header.php">Activitats</a></li>
+      <li><a href="activitats.php">Activitats</a></li>
       <li><a href="#">Sales</a></li>
       <li><a href="#">Curses</a></li>
       <li><a href="cuenta.php">El Meu Perfil</a></li>
@@ -507,7 +507,7 @@ EOF;
   </div>
   <div class="shadow move"></div>
   <div class="message"><h1 class="alert">Error!</h1><p>No hi ha cap activitat per Reservar actualment</div>
-  <button class="button-box" onclick="location.href='header.php'"><h1 class="red">SORTIR</h1></button>
+  <button class="button-box" onclick="location.href='activitats.php'"><h1 class="red">SORTIR</h1></button>
   </div>
   </div>
   EOF;
@@ -525,7 +525,7 @@ if($be==1){
   </div>
   <div class="shadow scale"></div>
   <div class="message"><h1 class="alert">Èxit!</h1><p>T'has registrat per a la activitat.</p></div>
-  <button class="button-box" onclick="location.href='header.php'"><h1 class="green">Continuar</h1></button>
+  <button class="button-box" onclick="location.href='activitats.php'"><h1 class="green">Continuar</h1></button>
   </div>
   EOF;
 }else if($be==2){
@@ -541,7 +541,7 @@ if($be==1){
   </div>
   <div class="shadow move"></div>
   <div class="message"><h1 class="alert">Error!</h1><p>Ja tens una reserva activa per aquesta activitat</div>
-  <button class="button-box" onclick="location.href='header.php'"><h1 class="red">SORTIR</h1></button>
+  <button class="button-box" onclick="location.href='activitats.php'"><h1 class="red">SORTIR</h1></button>
   </div>
   </div>
   EOF;
@@ -558,7 +558,7 @@ if($be==1){
   </div>
   <div class="shadow move"></div>
   <div class="message"><h1 class="alert">Error!</h1><p>Ja no pots reservar aquesta activitat</div>
-  <button class="button-box" onclick="location.href='header.php'"><h1 class="red">SORTIR</h1></button>
+  <button class="button-box" onclick="location.href='activitats.php'"><h1 class="red">SORTIR</h1></button>
   </div>
   </div>
   EOF;
@@ -577,7 +577,7 @@ else if($be==4){
   </div>
   <div class="shadow move"></div>
   <div class="message"><h1 class="alert">Error!</h1><p>Aformaent Complet</div>
-  <button class="button-box" onclick="location.href='header.php'"><h1 class="red">SORTIR</h1></button>
+  <button class="button-box" onclick="location.href='activitats.php'"><h1 class="red">SORTIR</h1></button>
   </div>
   </div>
   EOF;
@@ -595,7 +595,7 @@ else if($be==4){
   </div>
   <div class="shadow scale"></div>
   <div class="message"><h1 class="alert">Èxit!</h1><p>S'ha anulat l'activitat</p></div>
-  <button class="button-box" onclick="location.href='header.php'"><h1 class="green">Continuar</h1></button>
+  <button class="button-box" onclick="location.href='activitats.php'"><h1 class="green">Continuar</h1></button>
   </div>
   EOF;
 }
@@ -612,7 +612,7 @@ elseif($be==8){
   </div>
   <div class="shadow move"></div>
   <div class="message"><h1 class="alert">Error!</h1><p>No Pots Reservar Mes d'una Activitat Colectiva per Dia</div>
-  <button class="button-box" onclick="location.href='header.php'"><h1 class="red">SORTIR</h1></button>
+  <button class="button-box" onclick="location.href='activitats.php'"><h1 class="red">SORTIR</h1></button>
   </div>
   </div>
   EOF;
@@ -630,7 +630,7 @@ elseif($be==9){
   </div>
   <div class="shadow move"></div>
   <div class="message"><h1 class="alert">Error!</h1><p>No Pots Reservar Mes d'una Activitat Individual per Dia</div>
-  <button class="button-box" onclick="location.href='header.php'"><h1 class="red">SORTIR</h1></button>
+  <button class="button-box" onclick="location.href='activitats.php'"><h1 class="red">SORTIR</h1></button>
   </div>
   </div>
   EOF;
