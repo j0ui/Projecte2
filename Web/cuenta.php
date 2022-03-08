@@ -23,11 +23,11 @@ $Telefon = $valores['Telefon'];
 ?>
 <!--Tenim la pàgina ordenada per header/main/footer-->
 <!DOCTYPE html PUBLIC >
-<html lang="en-US">
+<html lang="ca">
 <head>
 <link rel="stylesheet" href="cuenta.css">
 <link rel="stylesheet" href="http://wicky.nillia.ms/headroom.js/">
-<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -42,7 +42,7 @@ $Telefon = $valores['Telefon'];
     <ul>
       <li><a href="inici.php">Inici</a></li>
       <li><a href="activitats.php">Activitats</a></li>
-      <li><a href="error404.html">Sales</a></li>
+      <li><a href="Sala.php">Sales</a></li>
       <li><a href="error404.html">Curses</a></li>
       <li><a href="cuenta.php">El Meu Perfil</a></li>
       <li><a href="reserves.php">Les Meves Reserves</a></li>

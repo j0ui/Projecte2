@@ -19,7 +19,7 @@ if(isset($_POST['logout'])){
     <head>
       <meta charset="UTF-8" />
         <title>Pagina inici</title>
-        <link rel="stylesheet" href="Pr1_estil.css">
+        <link rel="stylesheet" href="inici.css">
         <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Links per utilitzar els fonts de google -->
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@ if(isset($_POST['logout'])){
      <ul>
        <li><a href="inici.php">Inici</a></li>
        <li><a href="activitats.php">Activitats</a></li>
-       <li><a href="error404.html">Sales</a></li>
+       <li><a href="Sala.php">Sales</a></li>
        <li><a href="error404.html">Curses</a></li>
        <li><a href="cuenta.php">El Meu Perfil</a></li>
        <li><a href="reserves.php">Les Meves Reserves</a></li>
@@ -61,7 +61,7 @@ if(isset($_POST['logout'])){
 
  				<span>Les Nostres</span>
  				<span>Sales</span>
- 				<a class="button" href="sales.php" target="/black">Veure les Sales</a>
+ 				<a class="button" href="Sala.php" target="/black">Veure les Sales</a>
  			</div>
  		</div>
  		<div class="untitled__slide">

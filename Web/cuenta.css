@@ -3,7 +3,7 @@ body {
   color: #E5DADA;
   margin: 0;
   overflow-x: hidden;
-  font-family: "Fira Sans", sans-serif;
+font-family: 'Oswald';
   background-color: black;
 }
 body::-webkit-scrollbar {

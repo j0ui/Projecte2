@@ -35,7 +35,7 @@ if(isset($_POST['logout'])){
     <ul>
       <li><a href="inici.php">Inici</a></li>
       <li><a href="activitats.php">Activitats</a></li>
-      <li><a href="#">Sales</a></li>
+      <li><a href="Sala.php">Sales</a></li>
       <li><a href="#">Curses</a></li>
       <li><a href="cuenta.php">El Meu Perfil</a></li>
       <li><a href="reserves.php">Les Meves Reserves</a></li>
@@ -379,7 +379,7 @@ if($be==1){
   <div class="mouth happy"></div>
   </div>
   <div class="shadow scale"></div>
-  <div class="message"><h1 class="alert">Success!</h1><p>T'has donat de baixa de l'activitat.</p></div>
+  <div class="message"><h1 class="alert">Èxit!</h1><p>T'has donat de baixa de l'activitat.</p></div>
   <button class="button-box" onclick="location.href='reserves.php'"><h1 class="green">Continuar</h1></button>
   </div>
   EOF;

@@ -15,10 +15,10 @@ if(isset($_POST['logout'])){
 ?>
 <!DOCTYPE html PUBLIC >
 <!--Aquesta pàgina tambe l'hem ordenat per header/main/footer encara que el contingut esta dins el php ja que aixi es mes facil treballar i inserir dades de php dins html -->
-<html xml:lang="en-US" lang="en-US">
+<html lang="ca">
 <head>
 <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
-<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="activitats.css">
 <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- link per una pagina de icones, per posar les logos de xarxes al footer -->
 <link rel="stylesheet" href="http://wicky.nillia.ms/headroom.js/">
@@ -35,7 +35,7 @@ if(isset($_POST['logout'])){
     <ul>
       <li><a href="inici.php">Inici</a></li>
       <li><a href="activitats.php">Activitats</a></li>
-      <li><a href="#">Sales</a></li>
+      <li><a href="Sala.php">Sales</a></li>
       <li><a href="#">Curses</a></li>
       <li><a href="cuenta.php">El Meu Perfil</a></li>
       <li><a href="reserves.php">Les Meves Reserves</a></li>
@@ -322,15 +322,20 @@ foreach($query as $row){
     $anular = 12;
   }
 //Aqui esta el text que s'imprimirà de les activitats entre 1 i 24 hores
+if($row['ID_Activitat']==1 ||$row['ID_Activitat']==2 ||$row['ID_Activitat']==3 ||$row['ID_Activitat']==4 || $row['ID_Activitat']==7){
+  $tipus = 'Individual';
+}else{
+  $tipus = 'Colectiva';
+}
 ECHO <<< EOF
 
 <div class="container">
 <div class="card" id="$color"><p class="actn">$row[Act_nom]</p>
 <div class="imgBx">
-<img src="imatges/$row[img]">
+<img src="imatges/$row[img]" alt="$row[img]">
 </div>
 <div class="contentBx">
-<h2>$row[Act_nom]</h2>
+<h2>$row[Act_nom] / $tipus</h2>
 <div class="monitor">
 <h3>Monitor:</h3>
 $row[Nom_m] $row[Cognom_m]
@@ -367,124 +372,124 @@ $exists7 = (mysqli_num_rows($query2))?TRUE:FALSE;
 
 if($row['ID_Activitat']==1 && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button" value="&#8986; Reservar"><span>&#128690; Reservar</span></button>
 EOF;
 }
 if(($row['ID_Activitat']==2) && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button2" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button2" value="&#8986; Reservar"><span>&#127934; Reservar</span></button>
 EOF;
 }
 if($row['ID_Activitat']==3 && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button3" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button3" value="&#8986; Reservar"><span>&#127946; Reservar</span></button>
 EOF;
 }
 if($row['ID_Activitat']==4 && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button4" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button4" value="&#8986; Reservar"><span>&#128170; Reservar</span></button>
 EOF;
 }
 if($row['ID_Activitat']==5 && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button5" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button5" value="&#8986; Reservar"><span>&#128692; Reservar</span></button>
 EOF;
 }
 if($row['ID_Activitat']==6 && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button6" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button6" value="&#8986; Reservar"><span>&#127947; Reservar</span></button>
 EOF;
 }
 if($row['ID_Activitat']==7 && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button7" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button7" value="&#8986; Reservar"><span>&#127996; Reservar</span></button>
 EOF;
 }
 if($row['ID_Activitat']==8 && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button8" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button8" value="&#8986; Reservar"><span>&#129336; Reservar</span></button>
 EOF;
 }
 if($row['ID_Activitat']==9 && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button9" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button9" value="&#8986; Reservar"><span>&#127946; Reservar</span></button>
 EOF;
 }
 if($row['ID_Activitat']==10 && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button10" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button10" value="&#8986; Reservar"><span>&#129341; Reservar</span></button>
 EOF;
 }
 if($row['ID_Activitat']==11 && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button11" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button11" value="&#8986; Reservar"><span>&#127996; Reservar</span></button>
 EOF;
 }
 if($row['ID_Activitat']==12 && $exists7==null){
 ECHO <<< EOF
-<button type="submit" name="bier-button12" value="&#8986; Reservar"><span>Reservar</span></button>
+<button type="submit" name="bier-button12" value="&#8986; Reservar"><span>&#128131;Reservar&#128378;</span></button>
 EOF;
 }
 
 //Aqui diem que si no es null ens apareixi el boto de Anular i que tambe agafi la ID de la activitat
 if($row['ID_Activitat']==1 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 if($row['ID_Activitat']==2 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular2" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular2" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 if($row['ID_Activitat']==3 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular3" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular3" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 if($row['ID_Activitat']==4 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular4" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular4" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 if($row['ID_Activitat']==5 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular5" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular5" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 if($row['ID_Activitat']==6 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular6" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular6" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 if($row['ID_Activitat']==7 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular7" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular7" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 if($row['ID_Activitat']==8 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular8" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular8" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 if($row['ID_Activitat']==9 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular9" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular9" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 if($row['ID_Activitat']==10 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular10" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular10" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 if($row['ID_Activitat']==11 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular11" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular11" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 if($row['ID_Activitat']==12 && $exists7!=null){
 ECHO <<< EOF
-<button type="submit" name="anular12" value="&#8986; Reservar"><span>Anular</span></button>
+<button type="submit" name="anular12" value="&#8986; Reservar"><span>&#10060; Anular</span></button>
 EOF;
 }
 ECHO <<< EOF
