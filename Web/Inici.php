@@ -13,6 +13,10 @@ if(isset($_POST['logout'])){
     session_destroy();
     header('Location: index.php');
 }
+
+$query = $con -> query ("SELECT SUM(reserves) as aforament FROM activitat WHERE (NOW() - INTERVAL 1 HOUR)<h_inici AND (NOW() + INTERVAL 1 HOUR)>h_inici");
+$valores = mysqli_fetch_array($query);
+$aforament = $valores['aforament'];
 ?>
 <html lang="ca">
 
@@ -54,6 +58,7 @@ if(isset($_POST['logout'])){
  				<span>Les</span>
  				<span>Activitats</span>
  				<a class="button" href="activitats.php" target="/black">Reservar Activitats</a>
+        <span class="aforo">Aforo Actual:<?=$aforament?></span>
  			</div>
  		</div>
  		<div class="untitled__slide">
@@ -63,6 +68,7 @@ if(isset($_POST['logout'])){
  				<span>Les Nostres</span>
  				<span>Sales</span>
  				<a class="button" href="Sala.php" target="/black">Veure les Sales</a>
+        <span class="aforo">Aforo Actual:<?=$aforament?></span>
  			</div>
  		</div>
  		<div class="untitled__slide">
@@ -71,6 +77,7 @@ if(isset($_POST['logout'])){
  				<span>Curses</span>
  				<span>Del trimestre</span>
  				<a class="button" href="calendari.php" target="/black">Veure Les Curses</a>
+        <span class="aforo">Aforo Actual:<?=$aforament?></span>
  			</div>
  		</div>
  		<div class="untitled__slide">
@@ -79,6 +86,7 @@ if(isset($_POST['logout'])){
  				<span>El meu</span>
  				<span>Espai Personal</span>
  				<a class="button" href="cuenta.php" target="/black">Veure Perfil</a>
+        <span class="aforo">Aforo Actual:<?=$aforament?></span>
  			</div>
  		</div>
  	</div>
