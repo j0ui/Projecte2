@@ -17,16 +17,16 @@ if (isset($_POST['login'])) {
     if($DNI==$DNI3 && $contra==$Contrassenya){
     $query = $con -> query ("select a.* from client cl, apuntar a where a.DNI_c='$DNI' AND cl.DNI='$DNI' and cl.Contrassenya='$Contrassenya' ORDER BY a.ID_BAIXA ASC");
         $result = mysqli_fetch_array($query);
-        foreach($query as $row){
-        $count = $row['client'];
-        if($row['ID_BAIXA']==null && $row['ID_ALTA']!=null){
+        $baixa = $result['ID_BAIXA'];
+        $alta = $result['ID_ALTA'];
+        if($baixa==null && $alta!=null){
             $_SESSION['DNI'] = $DNI;
             header('Location: Inici.php');
-        }else if($row['ID_BAIXA']!=null && $row['ID_ALTA']!=null){
+        }else if($baixa!=null && $alta!=null){
 
             echo "<span class=\"error\">".$error2."</span";
         }
-      }
+
     }else{
 
         echo "<span class=\"error\">".$error."</span";
