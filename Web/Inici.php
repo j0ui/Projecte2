@@ -69,7 +69,7 @@ if(isset($_POST['logout'])){
  			<div class="untitled__slideContent">
  				<span>Curses</span>
  				<span>Del trimestre</span>
- 				<a class="button" href="curses.php" target="/black">Veure Les Curses</a>
+ 				<a class="button" href="calendari.php" target="/black">Veure Les Curses</a>
  			</div>
  		</div>
  		<div class="untitled__slide">
