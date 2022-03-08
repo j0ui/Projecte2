@@ -68,7 +68,7 @@ $aforament = $valores['aforament'];
  				<span>Les Nostres</span>
  				<span>Sales</span>
  				<a class="button" href="Sala.php" target="/black">Veure les Sales</a>
-        <span class="aforo">Aforo Actual:<?=$aforament?></span>
+        <span class="aforo2">Aforo Actual:<?=$aforament?></span>
  			</div>
  		</div>
  		<div class="untitled__slide">
@@ -77,7 +77,7 @@ $aforament = $valores['aforament'];
  				<span>Curses</span>
  				<span>Del trimestre</span>
  				<a class="button" href="calendari.php" target="/black">Veure Les Curses</a>
-        <span class="aforo">Aforo Actual:<?=$aforament?></span>
+        <span class="aforo3">Aforo Actual:<?=$aforament?></span>
  			</div>
  		</div>
  		<div class="untitled__slide">
@@ -86,7 +86,7 @@ $aforament = $valores['aforament'];
  				<span>El meu</span>
  				<span>Espai Personal</span>
  				<a class="button" href="cuenta.php" target="/black">Veure Perfil</a>
-        <span class="aforo">Aforo Actual:<?=$aforament?></span>
+        <span class="aforo4">Aforo Actual:<?=$aforament?></span>
  			</div>
  		</div>
  	</div>

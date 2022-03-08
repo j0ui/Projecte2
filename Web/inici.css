@@ -468,6 +468,24 @@ body {
   margin-top: 52%;
   font-size: 5vmin;
 }
+
+.untitled__slideContent .aforo2 {
+  position: absolute;
+  margin-top: 43%;
+  font-size: 5vmin;
+}
+
+.untitled__slideContent .aforo3 {
+  position: absolute;
+  margin-top: 37%;
+  font-size: 5vmin;
+}
+
+.untitled__slideContent .aforo4 {
+  position: absolute;
+  margin-top: 32%;
+  font-size: 5vmin;
+}
 .button {
   font-family: 'Oswald';
   text-decoration: none;
