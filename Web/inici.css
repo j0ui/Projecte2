@@ -463,7 +463,11 @@ body {
   display: block;
   font-size: 15vmin;
 }
-
+.untitled__slideContent .aforo {
+  position: absolute;
+  margin-top: 52%;
+  font-size: 5vmin;
+}
 .button {
   font-family: 'Oswald';
   text-decoration: none;
