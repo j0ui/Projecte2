@@ -43,7 +43,7 @@ public class Gimnas {
             switch (opcio){
                 case '1':
                     System.out.println(" Gestionar el Client ");
-                    cl.Gestio_client();
+                    cl.Gestio_clients();
                     break;
                  case '2':
                     System.out.println(" Llistar els Clients ");

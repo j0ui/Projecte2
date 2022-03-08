@@ -181,7 +181,7 @@ public class Client {
     
     
     
-    public void Gestio_client() throws SQLException, ParseException, IOException{
+    public void Gestio_clients() throws SQLException, ParseException, IOException{
         do{
             System.out.println("**********MENU GIMNAS*********");
         
@@ -354,7 +354,7 @@ public class Client {
             sql.setString(5, this.domicili);
             sql.setString(6, this.Telefon.getTelefon());
             sql.setString(7, this.CCC.getCCC());
-            sql.setString(8, Base64.getEncoder().encodeToString(this.contrassenya.getBytes()));
+            sql.setString(8, e.MD5(this.contrassenya));
             sql.setDate(9, java.sql.Date.valueOf(this.fecha.getFecha()));
             if(DNI.equals("NIE")){
                 System.out.println("-----------------------------------");
@@ -1125,7 +1125,6 @@ public class Client {
                             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
                             sql.setDate(1, alta);
                             sql.setDate(2, java.sql.Date.valueOf(date.format(formatter)));
-                            sql.setInt(3, id);
                             sql.setString(4, dni3);
                             int res = sql.executeUpdate();
                             if(res==1){
@@ -1199,7 +1198,7 @@ public class Client {
                 System.out.println("No s'ha trobat el client amb el DNI: "+ dni);
             }
         
-        String consulta3 = String.format("select * from apuntar where DNI_c= " + "\"%s\"" + ";", dni);
+        String consulta3 = String.format("select * from apuntar where DNI_c= " + "\"%s\"" + " ORDER BY ID_BAIXA ASC;", dni);
         PreparedStatement sql3 = con.prepareStatement(consulta3);
         sql3.executeQuery();
         ResultSet rs3 = sql3.executeQuery();
