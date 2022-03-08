@@ -389,7 +389,6 @@ input[type="checkbox"]{
   overflow: hidden;
   box-shadow: 0 2px 4px darkgray;
   transition: all 0.2s ease-in;
-  z-index: 1;
 }
 .button .circle {
   position: absolute;
@@ -398,7 +397,6 @@ input[type="checkbox"]{
   background-image: radial-gradient(circle closest-side, white, #eaadc1);
   width: 1px;
   height: 1px;
-  z-index: 3;
   -webkit-animation-name: ripple;
           animation-name: ripple;
   -webkit-animation-duration: 0.5s;

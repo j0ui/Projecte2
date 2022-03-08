@@ -39,7 +39,7 @@ if(isset($_POST['logout'])){
        <li><a href="inici.php">Inici</a></li>
        <li><a href="activitats.php">Activitats</a></li>
        <li><a href="Sala.php">Sales</a></li>
-       <li><a href="error404.html">Curses</a></li>
+       <li><a href="calendari.php">Curses</a></li>
        <li><a href="cuenta.php">El Meu Perfil</a></li>
        <li><a href="reserves.php">Les Meves Reserves</a></li>
        <li name="logout"><a href="logout.php">Log Out</a></li>

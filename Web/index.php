@@ -10,24 +10,28 @@ if (isset($_POST['login'])) {
     $Contrassenya =  mysqli_real_escape_string($con,md5($_POST['Contrassenya']));
     $error = "DNI o Contrassenya incorrectes";
     $error2 = "No estas donat de alta";
-    $sql_query = "select count(*) as cntUser, a.* from client cl, apuntar a where a.DNI_c='".$DNI."' AND cl.DNI='".$DNI."' and cl.Contrassenya='".$Contrassenya."'";
-        $result = mysqli_query($con,$sql_query);
-        $row = mysqli_fetch_array($result);
-        $baixa = $row['ID_BAIXA'];
-        $count = $row['cntUser'];
-
-        if($count > 0 && $baixa==null){
+    $query2 = $con -> query ("select * from client");
+    $valores = mysqli_fetch_array($query2);
+    $contra = $valores['Contrassenya'];
+    $DNI3 = $valores['DNI'];
+    if($DNI==$DNI3 && $contra==$Contrassenya){
+    $query = $con -> query ("select a.* from client cl, apuntar a where a.DNI_c='$DNI' AND cl.DNI='$DNI' and cl.Contrassenya='$Contrassenya' ORDER BY a.ID_BAIXA ASC");
+        $result = mysqli_fetch_array($query);
+        foreach($query as $row){
+        $count = $row['client'];
+        if($row['ID_BAIXA']==null && $row['ID_ALTA']!=null){
             $_SESSION['DNI'] = $DNI;
             header('Location: Inici.php');
-        }else if($count > 0 && $baixa!=null){
+        }else if($row['ID_BAIXA']!=null && $row['ID_ALTA']!=null){
 
             echo "<span class=\"error\">".$error2."</span";
-        }else if($count == 0){
-
-            echo "<span class=\"error\">".$error."</span";
         }
-}
+      }
+    }else{
 
+        echo "<span class=\"error\">".$error."</span";
+    }
+}
 ?>
 
 <html lang="en" dir="ltr">
